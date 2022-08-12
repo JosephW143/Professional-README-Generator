@@ -129,7 +129,7 @@ function writeToFile(fileName, data) {
 function init() {
     questions()
     .then((data) => {
-        writeToFile('README.md', generateMarkdown(data))
+        writeToFile('./dist/README.md', generateMarkdown(data))
     })
 };
 
