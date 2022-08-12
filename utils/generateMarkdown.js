@@ -14,6 +14,38 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   return `# ${data.title}
 
+  ![${data.license}]https://img.shields.io/badge/licene-${data.license}-<ff69b4)
+
+  ## Description
+  ${data.description}
+
+  ## Table of Contents
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [license](#license)
+  - [Contributing](#contributing)
+  - [Test](#test)
+  - [Questions](#questions)
+
+  ## Installation
+  ${data.installation}
+
+  ## Usage
+  ${data.usage}
+
+  ## license
+  This project is using license from ${data.license}
+
+  ## Contributing
+  ${data.contributing}
+
+  ## Tests
+  ${data.test}
+
+  ## Questions
+  If you have any questions about this project please email ${data.email}
+
+  You can also vist my GitHub profile here: http://github.com/${data.username}
 `;
 }
 
