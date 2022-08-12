@@ -34,7 +34,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'installation',
-            message: 'How do you Instal your project? (Required)',
+            message: 'How do you Install your project? (Required)',
             validate: installationInput => {
                 if(installationInput) {
                     return true;
@@ -118,13 +118,20 @@ const questions = () => {
 
     ]);
 };
-questions();
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(`${fileName}`, data, (err) =>
+    err ? console.error(err): console.log('README.md Successfully Created!'));
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    questions()
+    .then((data) => {
+        writeToFile('README.md', generateMarkdown(data))
+    })
+};
 
 // Function call to initialize app
 init();
